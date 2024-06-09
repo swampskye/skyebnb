@@ -1,18 +1,13 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 
 import { HomeWrapper } from "./style";
 import HomeBanner from "./children/home-banner";
+import SectionHeader from "@/components/SectionHeader";
 import { fetchHomeDataAction } from "@/store/modules/home";
+import SectionRooms from "./children/SectionRooms";
 
 const Home = memo(() => {
-  // const { goodPriceInfo } = useSelector(
-  //   (state) => ({
-  //     goodPriceInfo: state.home.goodPriceInfo,
-  //   }),
-  //   shallowEqual
-  // );
-
   /** 从redux中获取数据 */
   const { goodPriceInfo } = useSelector(
     (state) => ({
@@ -30,11 +25,10 @@ const Home = memo(() => {
     <HomeWrapper>
       <HomeBanner />
       <div className="content">
-        <ul>
-          {goodPriceInfo.list?.map((item) => (
-            <li key={item.id}>{item.name}</li>
-          ))}
-        </ul>
+        <div className="good-price">
+          <SectionHeader title="Title" subtitle="subtitle" />
+          <SectionRooms roomList={goodPriceInfo} />
+        </div>
       </div>
     </HomeWrapper>
   );
