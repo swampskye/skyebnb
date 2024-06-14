@@ -26,5 +26,5 @@ class MyRequest {
     return this.request({ ...config, method: "post" });
   }
 }
-
-export default new MyRequest(BASE_URL, TIMEOUT);
+const r = new MyRequest(BASE_URL, TIMEOUT);
+export default r;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const SectionHeaderWrapper = styled.div`
   color: #222;
+  margin-top: 30px;
   .title {
     font-size: 22px;
     font-weight: 700;
