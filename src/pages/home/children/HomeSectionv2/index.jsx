@@ -3,7 +3,8 @@ import React, { memo, useState, useCallback } from "react";
 import { Sectionv2Wrapper } from "./style";
 import SectionHeader from "@/components/SectionHeader";
 import SectionRooms from "../SectionRooms";
-import SectionTaps from "@/components/SectionTaps";
+import SectionTabs from "@/components/SectionTabs";
+import SectionFooter from "@/components/SectionFooter";
 
 const HomeSectionv2 = memo((props) => {
   // props
@@ -19,11 +20,12 @@ const HomeSectionv2 = memo((props) => {
     <Sectionv2Wrapper>
       <div className="discount">
         <SectionHeader title={infoData.title} subtitle={infoData.subtitle} />
-        <SectionTaps tabTitles={tabTitles} tabClick={tabClickHandle} />
+        <SectionTabs tabTitles={tabTitles} tabClick={tabClickHandle} />
         <SectionRooms
           roomList={infoData.dest_list?.[selectedName]}
           itemWidth={"33.33%"}
         />
+        <SectionFooter name={selectedName} />
       </div>
     </Sectionv2Wrapper>
   );

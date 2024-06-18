@@ -1,11 +1,13 @@
 import styled from "styled-components";
 export const RoomItemWrapper = styled.div`
+  flex-shrink: 0;
   box-sizing: border-box;
   width: ${(props) => props.itemWidth};
   padding: 8px;
 
   .inner {
     width: 100%;
+    cursor: pointer;
   }
 
   .cover {

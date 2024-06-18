@@ -13,3 +13,15 @@ export const getHomeHighScoreData = () => {
 export const getHomeDiscountData = () => {
   return myRequest.get({ url: "/home/discount" });
 };
+
+export const getHomeRecommendData = () => {
+  return myRequest.get({ url: "/home/hotrecommenddest" });
+};
+
+export const getHomeLongForData = () => {
+  return myRequest.get({ url: "/home/longfor" });
+};
+
+export const getHomePlusData = () => {
+  return myRequest.get({ url: "/home/plus" });
+};
