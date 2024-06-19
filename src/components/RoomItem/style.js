@@ -7,7 +7,6 @@ export const RoomItemWrapper = styled.div`
 
   .inner {
     width: 100%;
-    cursor: pointer;
   }
 
   .cover {
@@ -16,6 +15,7 @@ export const RoomItemWrapper = styled.div`
     padding: 66.66% 8px 0;
     border-radius: 3px;
     overflow: hidden;
+    cursor: pointer;
 
     img {
       position: absolute;
@@ -84,7 +84,7 @@ export const RoomItemWrapper = styled.div`
         justify-content: center;
         align-items: center;
         width: 14.29%;
-
+        /* width: 20%; */
         .dot {
           width: 6px;
           height: 6px;
@@ -94,6 +94,7 @@ export const RoomItemWrapper = styled.div`
           &.active {
             width: 8px;
             height: 8px;
+            /* background-color: pink; */
           }
         }
       }
@@ -104,7 +105,7 @@ export const RoomItemWrapper = styled.div`
     margin: 10px 0 5px;
     font-size: 12px;
     font-weight: 700;
-    color: ${(props) => props.$verifyColor};
+    color: ${(props) => props.verifyColor};
   }
 
   .name {

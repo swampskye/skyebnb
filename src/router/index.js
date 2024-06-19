@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom";
 const Home = React.lazy(() => import("@/pages/home"));
 const Entire = React.lazy(() => import("@/pages/entire"));
 const Detail = React.lazy(() => import("@/pages/detail"));
+const Demo = React.lazy(() => import("@/pages/demo"));
 const routes = [
   {
     path: "/",
@@ -20,6 +21,10 @@ const routes = [
   {
     path: "/detail",
     element: <Detail />,
+  },
+  {
+    path: "/demo",
+    element: <Demo />,
   },
 ];
 export default routes;

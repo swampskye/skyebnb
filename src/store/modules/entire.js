@@ -10,7 +10,7 @@ export const fetchRoomListAction = createAsyncThunk(
     dispatch(changeIsLoadingAction(true));
     const res = await getEntireRoomsList(page * 20);
     dispatch(changeIsLoadingAction(false));
-    console.log("entire data---------------------", res);
+    // console.log("entire data---------------------", res);
 
     // save states in redux
     const roomList = res.list;
