@@ -22,7 +22,7 @@ const EntireRooms = memo((props) => {
     (item) => {
       dispatch(changeDetailInfoAction(item));
       navigator("/detail");
-      console.log(item);
+      // console.log(item);
     },
     [navigator]
   );

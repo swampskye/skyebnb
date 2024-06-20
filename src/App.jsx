@@ -1,7 +1,7 @@
 import "./assets/css/index.less";
 import "normalize.css";
 import "./assets/css/reset.less";
-import React, { memo } from "react";
+import React, { memo, Suspense } from "react";
 import { useRoutes } from "react-router-dom";
 import routes from "./router";
 import Header from "@/components/Header";
@@ -11,7 +11,10 @@ const App = memo(() => {
   return (
     <div className="app">
       <Header />
-      <div className="page">{useRoutes(routes)}</div>
+      <Suspense fallback="loading">
+        <div className="page">{useRoutes(routes)}</div>
+      </Suspense>
+
       <Footer />
     </div>
   );

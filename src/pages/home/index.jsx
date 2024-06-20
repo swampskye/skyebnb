@@ -9,6 +9,7 @@ import HomeSectionV2 from "./children/HomeSectionv2";
 import { isEmptyO } from "@/utils/isEmptyO";
 import HomeLongFor from "./children/HomeLongFor";
 import HomeSectionv3 from "./children/HomeSectionv3";
+import { changeHeaderConfigAction } from "@/store/modules/main";
 const Home = memo(() => {
   /** 从redux中获取数据 */
   const {
@@ -34,6 +35,7 @@ const Home = memo(() => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchHomeDataAction("xxxx"));
+    dispatch(changeHeaderConfigAction({ isFixed: true, topAlpha: true }));
   }, [dispatch]);
 
   // const [selectedName, setSelectedName] = useState("佛山");

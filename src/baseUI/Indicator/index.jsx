@@ -2,7 +2,8 @@ import PropTypes from "prop-types";
 import React, { memo, useEffect, useRef } from "react";
 import { IndicatorWrapper } from "./style";
 const Indicator = memo((props) => {
-  const { selectedIndex } = props;
+  const { selectedIndex = 0 } = props;
+
   const contentRef = useRef();
   useEffect(() => {
     const selectedItem = contentRef.current.children[selectedIndex];
@@ -25,10 +26,6 @@ const Indicator = memo((props) => {
     }
     // translate
     contentRef.current.style.transform = `translate(${-distance}px)`;
-
-    // console.log(selectedIndex);
-    // console.log(offsetLeft);
-    // console.log(distance);
   }, [selectedIndex]);
   return (
     <IndicatorWrapper>

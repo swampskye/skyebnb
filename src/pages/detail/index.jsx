@@ -1,12 +1,23 @@
-import React, { memo } from "react";
-import { useSelector } from "react-redux";
+// import { changeHeaderConfigAction } from "@/store/modules/main";
+import React, { memo, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import DetailInfo from "./DetailInfo";
+import DetailPictures from "./DetailPictures";
+import { changeHeaderConfigAction } from "@/store/modules/main";
+import { DetailWrapper } from "./style";
 
 const Detail = memo(() => {
-  const { detailInfo } = useSelector((state) => ({
-    detailInfo: state.detail.detailInfo,
-  }));
-  return <div>{detailInfo.name}</div>;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(changeHeaderConfigAction({ isFixed: false, topAlpha: false }));
+  }, [dispatch]);
+
+  return (
+    <DetailWrapper>
+      <DetailPictures />
+      <DetailInfo />
+    </DetailWrapper>
+  );
 });
 
-Detail.propTypes = {};
 export default Detail;

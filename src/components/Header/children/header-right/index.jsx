@@ -16,15 +16,7 @@ const HeaderRight = memo(() => {
       window.removeEventListener("click", handleWindowClick, true);
     };
   }, []);
-  // useEffect(() => {
-  //   let handleWindowClick = () => {
-  //     setIsShow(false);
-  //   };
-  //   window.addEventListener("click", handleWindowClick, true);
-  //   return () => {
-  //     window.removeEventListener("click", handleWindowClick, true);
-  //   };
-  // }, [isShow]);
+
   return (
     <RightWrapper>
       <div className="btns">
